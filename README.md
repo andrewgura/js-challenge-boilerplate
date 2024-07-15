@@ -1,15 +1,27 @@
-# KinOcr
+Here is my submission for the coding challenge. These are the basic commands and some notes I wanted to leave you:
 
-## Instructions
+**Start guide**
 
-Your Kin recruiting contact should have sent you a set of instructions for this test.
+```
+npm i
+ng serve
+```
 
-## How to use this boilerplate
+**Tests**
 
-We are a Typescript-first shop and value your understanding of TS/JS over Angular. If you have never used Angular before, you can find the framework documentation here: https://angular.dev/overview.
+```
+ng test
+```
 
-All of our applications are using the modern versions of Angular, so feel free to use [standalone components](https://angular.dev/essentials/components) and the [new control flow syntax](https://blog.angular.io/meet-angulars-new-control-flow-a02c6eee7843) to make it feel more like React, Vue or Svelt if that's what you are used to.
+![Chrome Lighthouse Accessibility](image.png)
 
-Feel free to remove routing or upgrade any of the dependencies if you need to.
-
-Please use the `./sample.csv` file as input into your application.
+1. All requirements are accounted for; Stories 1-3.
+2. The only additional package added is Tailwind. I added custom classes for the provided color pallete.
+3. Since one of the statements was:
+   > We are a Typescript-first shop and value your
+   > understanding of TS/JS over using specific Angular patterns.
+   > I didn't focus much on the Angular patterns.
+4. The only test I added that seemed worth while for this task was to test if a policy number was valid. Also assumed all csv files would be in proper format.
+5. Accessibility score of 100
+6. Mobile responsive
+7. Included a 2.2 mb File to test the file size requirement.

@@ -1,31 +1,30 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [AppComponent],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'kin-ocr' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('kin-ocr');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, Kin OCR'
-    );
+  it('should return correct value if policyNumber is valid', () => {
+    expect(component.isValidPolicyNumber(457500000)).toBeFalse();
+    expect(component.isValidPolicyNumber(664371495)).toBeFalse();
+    expect(component.isValidPolicyNumber(333333333)).toBeFalse();
+    expect(component.isValidPolicyNumber(45750800)).toBeFalse();
+    expect(component.isValidPolicyNumber(555555555)).toBeFalse();
+    expect(component.isValidPolicyNumber(666666666)).toBeFalse();
+    expect(component.isValidPolicyNumber(777777777)).toBeFalse();
+    expect(component.isValidPolicyNumber(861100036)).toBeFalse();
+    expect(component.isValidPolicyNumber(861100036)).toBeFalse();
+    expect(component.isValidPolicyNumber(123456789)).toBeTrue();
+    expect(component.isValidPolicyNumber(457508000)).toBeTrue();
   });
 });
